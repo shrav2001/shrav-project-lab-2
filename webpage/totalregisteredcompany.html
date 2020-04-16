@@ -1,0 +1,896 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Total registered companies</title>
+      <style>
+      html,
+      body {
+        overflow-x: hidden; /* Prevent scroll on narrow devices */
+      }
+
+      /* since the navbar is fixed we need to add some space to the body */
+      body {
+       /* padding-top: 56px;*/
+      }
+          #team {
+    background: #eee !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #108d6f;
+    border-color: #108d6f;
+    box-shadow: none;
+    outline: none;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #007b5e;
+   
+    border-color: #007b5e;
+}
+          
+
+#team {
+    padding: 60px 0;
+}
+
+#team .section-title {
+    text-align: center;
+    color: #007b5e;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+
+#team .card {
+    border: none;
+    background: #ffffff;
+}
+          .img-fluid{
+              height: 100px;
+              width: 100px;
+          }
+          
+
+
+
+.mainflip {
+  
+    position: relative;
+}
+
+.frontside {
+    position: relative;
+    
+    margin-bottom: 30px;
+}
+
+ 
+           /* Footer */
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+#footer {
+    padding: 60px 0;
+    
+    
+}
+
+#footer .section-title {
+    text-align: center;
+    color: #007b5e;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+#footer {
+    background: #007b5e !important;
+}
+#footer h5{
+	padding-left: 10px;
+    border-left: 3px solid #eeeeee;
+    padding-bottom: 6px;
+    margin-bottom: 20px;
+    color:#ffffff;
+}
+#footer a {
+    color: #ffffff;
+    text-decoration: none !important;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+#footer ul.social li{
+	padding: 3px 0;
+}
+#footer ul.social li a i {
+    margin-right: 5px;
+	font-size:25px;
+	-webkit-transition: .5s all ease;
+	-moz-transition: .5s all ease;
+	transition: .5s all ease;
+}
+#footer ul.social li:hover a i {
+	font-size:30px;
+	margin-top:-10px;
+}
+#footer ul.social li a,
+#footer ul.quick-links li a{
+	color:#ffffff;
+}
+#footer ul.social li a:hover{
+	color:#eeeeee;
+}
+#footer ul.quick-links li{
+	padding: 3px 0;
+	-webkit-transition: .5s all ease;
+	-moz-transition: .5s all ease;
+	transition: .5s all ease;
+}
+#footer ul.quick-links li:hover{
+	padding: 3px 0;
+	margin-left:5px;
+	font-weight:700;
+}
+#footer ul.quick-links li a i{
+	margin-right: 5px;
+}
+#footer ul.quick-links li:hover a i {
+    font-weight: 700;
+}
+
+@media (max-width:767px){
+	#footer h5 {
+    padding-left: 0;
+    border-left: transparent;
+    padding-bottom: 0px;
+    margin-bottom: 10px;
+}
+}
+          .image-flip{
+              background-color: white;
+          }
+
+
+
+
+
+
+
+      </style>
+  </head>
+  <body>
+  
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+     <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Admin Dashboard</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav mr-auto">
+            
+            <li class="nav-item">
+              <a class="nav-link" href="#">Registered Users</a>
+            </li>
+            
+          </ul>
+          
+            
+        </div>
+      </nav>
+      
+      
+      <section id="team" class="pb-5">
+       <div class="container">
+              <h5 class="section-title h1">COMPANIES</h5>
+              <div class="row">
+                  <!-- Team member -->
+                  <div class="col-xs-12 col-sm-6 col-md-4">
+                      <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                          <div class="mainflip">
+                              <div class="frontside">
+                                  <div class="card">
+                                      <div class="card-body text-center">
+                                          <p><img class=" img-fluid" src="3dp.jfif" alt="card image"></p>
+                                          <h4 class="card-title">3DPLM</h4>
+                                          <a href="" class="btn btn-primary btn-sm">APPLY </a>
+                                      </div>
+                                  </div>
+                              </div>
+                        
+                                  <div class="card">
+                                      <div class="card-body text-center mt-4">
+                                         
+                                          <p class="card-text">
+                                              Name: Sudarshan Mogasale<br>
+                                            Phone: +91 (80) 2514 5000<br>
+                                            Email: Global.marketing@tcs.com</p>
+                                          <ul class="list-inline">
+                                              <li class="list-inline-item">
+                                                  <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                      <i class="fa fa-facebook"></i>
+                                                  </a>
+                                              </li>
+                                              <li class="list-inline-item">
+                                                  <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                      <i class="fa fa-twitter"></i>
+                                                  </a>
+                                              </li>
+                                              <li class="list-inline-item">
+                                                  <a class="social-icon text-xs-center" target="_blank" href="http://www.github.com/Chiranjeevicc">
+                                                      <i class="fa fa-github"></i>
+                                                  </a>
+                                              </li>
+                                              <li class="list-inline-item">
+                                                  <a class="social-icon text-xs-center" target="_blank" href="http://www.instagram.com/mysurien_kannadiga">
+                                                      <i class="fa fa-youtube"></i>
+                                                  </a>
+                                              </li>
+                                          </ul>
+                                      </div>
+                                
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- ./Team member -->
+                  <!-- Team member -->
+                  <div class="col-xs-12 col-sm-6 col-md-4">
+                      <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                          <div class="mainflip">
+                              <div class="frontside">
+                                  <div class="card">
+                                      <div class="card-body text-center">
+                                          <p><img class=" img-fluid" src="geni.png" alt="card image"></p>
+                                          <h4 class="card-title">GENISYS GROUP</h4>
+                                          <p class="card-text"></p>
+                                          <a href="#" class="btn btn-primary btn-sm">APPLY</a>
+                                      </div>
+                                  </div>
+                              </div>
+                           
+                                  <div class="card">
+                                      <div class="card-body text-center mt-4">
+                                         
+                                          <p class="card-text">
+                                              Name:Tony Bates<br>
+                                          Phone: +91 80 6786 2950<br>
+                                            Email: salesinquiry_in@oracle.com</p>
+                                          <ul class="list-inline">
+                                              <li class="list-inline-item">
+                                                  <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                      <i class="fa fa-facebook"></i>
+                                                  </a>
+                                              </li>
+                                              <li class="list-inline-item">
+                                                  <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                      <i class="fa fa-twitter"></i>
+                                                  </a>
+                                              </li>
+                                              <li class="list-inline-item">
+                                                  <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                      <i class="fa fa-skype"></i>
+                                                  </a>
+                                              </li>
+                                              <li class="list-inline-item">
+                                                  <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                      <i class="fa fa-google"></i>
+                                                  </a>
+                                              </li>
+                                          </ul>
+                                      </div>
+                                  </div>
+                              
+                          </div>
+                      </div>
+                  </div>
+                  <!-- ./Team member -->
+                  <!-- Team member -->
+                  <div class="col-xs-12 col-sm-6 col-md-4">
+                      <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                          <div class="mainflip">
+                              <div class="frontside">
+                                  <div class="card">
+                                      <div class="card-body text-center">
+                                          <p><img class=" img-fluid" src="nutanix.png" alt="card image"></p>
+                                          <h4 class="card-title">NUTANIX</h4>
+                                          <a href="" class="btn btn-primary btn-sm">APPLY</a>
+                                          
+                                      </div>
+                                  </div>
+                              </div>
+                              
+                                  <div class="card">
+                                      <div class="card-body text-center mt-4">
+                                         
+                                          <p class="card-text">
+                                           Name:Mr.Dheeraj Pandey<br>
+                                           Phone: +91 80 4127 1600<br>
+                                            Email: gs-investor-relations@gs.com </p>
+                                          <ul class="list-inline">
+                                              <li class="list-inline-item">
+                                                  <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                      <i class="fa fa-facebook"></i>
+                                                  </a>
+                                              </li>
+                                              <li class="list-inline-item">
+                                                  <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                      <i class="fa fa-twitter"></i>
+                                                  </a>
+                                              </li>
+                                              <li class="list-inline-item">
+                                                  <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                      <i class="fa fa-skype"></i>
+                                                  </a>
+                                              </li>
+                                              <li class="list-inline-item">
+                                                  <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                      <i class="fa fa-google"></i>
+                                                  </a>
+                                              </li>
+                                          </ul>
+                                      </div>
+                                 
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- ./Team member -->
+                  
+              </div>
+          </div>
+           </section>
+     <section id="team" class="pb-5">
+       <div class="container">
+             
+              <div class="row">
+                  <!-- Team member -->
+                  <div class="col-xs-12 col-sm-6 col-md-4">
+                      <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                          <div class="mainflip">
+                              <div class="frontside">
+                                  <div class="card">
+                                      <div class="card-body text-center">
+                                          <p><img class=" img-fluid" src="tata.jpg" alt="card image"></p>
+                                          <h4 class="card-title"> (TCS)</h4>
+                                          <a href="" class="btn btn-primary btn-sm">APPLY </a>
+                                      </div>
+                                  </div>
+                              </div>
+                        
+                                  <div class="card">
+                                      <div class="card-body text-center mt-4">
+                                         
+                                          <p class="card-text">
+                                              Name: Mr.Rajesh Gopinathan<br>
+                                            Phone: 080672 46000<br>
+                                            Email: Global.marketing@tcs.com</p>
+                                          <ul class="list-inline">
+                                              <li class="list-inline-item">
+                                                  <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                      <i class="fa fa-facebook"></i>
+                                                  </a>
+                                              </li>
+                                              <li class="list-inline-item">
+                                                  <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                      <i class="fa fa-twitter"></i>
+                                                  </a>
+                                              </li>
+                                              <li class="list-inline-item">
+                                                  <a class="social-icon text-xs-center" target="_blank" href="http://www.github.com/Chiranjeevicc">
+                                                      <i class="fa fa-github"></i>
+                                                  </a>
+                                              </li>
+                                              <li class="list-inline-item">
+                                                  <a class="social-icon text-xs-center" target="_blank" href="http://www.instagram.com/mysurien_kannadiga">
+                                                      <i class="fa fa-youtube"></i>
+                                                  </a>
+                                              </li>
+                                          </ul>
+                                      </div>
+                                
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- ./Team member -->
+                  <!-- Team member -->
+                  <div class="col-xs-12 col-sm-6 col-md-4">
+                      <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                          <div class="mainflip">
+                              <div class="frontside">
+                                  <div class="card">
+                                      <div class="card-body text-center">
+                                          <p><img class=" img-fluid" src="oracle.jpg" alt="card image"></p>
+                                          <h4 class="card-title">ORACLE</h4>
+                                          <p class="card-text"></p>
+                                          <a href="#" class="btn btn-primary btn-sm">APPLY</a>
+                                      </div>
+                                  </div>
+                              </div>
+                           
+                                  <div class="card">
+                                      <div class="card-body text-center mt-4">
+                                         
+                                          <p class="card-text">
+                                              Name:Ms. Safra Catz<br>
+                                          Phone: +91 80 6786 2950<br>
+                                            Email: salesinquiry_in@oracle.com</p>
+                                          <ul class="list-inline">
+                                              <li class="list-inline-item">
+                                                  <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                      <i class="fa fa-facebook"></i>
+                                                  </a>
+                                              </li>
+                                              <li class="list-inline-item">
+                                                  <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                      <i class="fa fa-twitter"></i>
+                                                  </a>
+                                              </li>
+                                              <li class="list-inline-item">
+                                                  <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                      <i class="fa fa-skype"></i>
+                                                  </a>
+                                              </li>
+                                              <li class="list-inline-item">
+                                                  <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                      <i class="fa fa-google"></i>
+                                                  </a>
+                                              </li>
+                                          </ul>
+                                      </div>
+                                  </div>
+                              
+                          </div>
+                      </div>
+                  </div>
+                  <!-- ./Team member -->
+                  <!-- Team member -->
+                  <div class="col-xs-12 col-sm-6 col-md-4">
+                      <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                          <div class="mainflip">
+                              <div class="frontside">
+                                  <div class="card">
+                                      <div class="card-body text-center">
+                                          <p><img class=" img-fluid" src="goldman.jpg" alt="card image"></p>
+                                          <h4 class="card-title">GOLDMAN SACHS</h4>
+                                          <a href="" class="btn btn-primary btn-sm">APPLY</a>
+                                          
+                                      </div>
+                                  </div>
+                              </div>
+                              
+                                  <div class="card">
+                                      <div class="card-body text-center mt-4">
+                                         
+                                          <p class="card-text">
+                                           Name:Mr. David Michael Solomon<br>
+                                           Phone: +91 80 4127 1600<br>
+                                            Email: gs-investor-relations@gs.com </p>
+                                          <ul class="list-inline">
+                                              <li class="list-inline-item">
+                                                  <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                      <i class="fa fa-facebook"></i>
+                                                  </a>
+                                              </li>
+                                              <li class="list-inline-item">
+                                                  <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                      <i class="fa fa-twitter"></i>
+                                                  </a>
+                                              </li>
+                                              <li class="list-inline-item">
+                                                  <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                      <i class="fa fa-skype"></i>
+                                                  </a>
+                                              </li>
+                                              <li class="list-inline-item">
+                                                  <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                      <i class="fa fa-google"></i>
+                                                  </a>
+                                              </li>
+                                          </ul>
+                                      </div>
+                                 
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- ./Team member -->
+                  
+              </div>
+          </div>
+           </section>
+       <section id="team" class="pb-5">
+       <div class="container">
+             
+              <div class="row">
+                  <!-- Team member -->
+                  <div class="col-xs-12 col-sm-6 col-md-4">
+                      <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                          <div class="mainflip">
+                              <div class="frontside">
+                                  <div class="card">
+                                      <div class="card-body text-center">
+                                          <p><img class=" img-fluid" src="tata.jpg" alt="card image"></p>
+                                          <h4 class="card-title"> (TCS)</h4>
+                                          <a href="" class="btn btn-primary btn-sm">APPLY </a>
+                                      </div>
+                                  </div>
+                              </div>
+                        
+                                  <div class="card">
+                                      <div class="card-body text-center mt-4">
+                                         
+                                          <p class="card-text">
+                                              Name: Mr.Rajesh Gopinathan<br>
+                                            Phone: 080672 46000<br>
+                                            Email: Global.marketing@tcs.com</p>
+                                          <ul class="list-inline">
+                                              <li class="list-inline-item">
+                                                  <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                      <i class="fa fa-facebook"></i>
+                                                  </a>
+                                              </li>
+                                              <li class="list-inline-item">
+                                                  <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                      <i class="fa fa-twitter"></i>
+                                                  </a>
+                                              </li>
+                                              <li class="list-inline-item">
+                                                  <a class="social-icon text-xs-center" target="_blank" href="http://www.github.com/Chiranjeevicc">
+                                                      <i class="fa fa-github"></i>
+                                                  </a>
+                                              </li>
+                                              <li class="list-inline-item">
+                                                  <a class="social-icon text-xs-center" target="_blank" href="http://www.instagram.com/mysurien_kannadiga">
+                                                      <i class="fa fa-youtube"></i>
+                                                  </a>
+                                              </li>
+                                          </ul>
+                                      </div>
+                                
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- ./Team member -->
+                  <!-- Team member -->
+                  <div class="col-xs-12 col-sm-6 col-md-4">
+                      <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                          <div class="mainflip">
+                              <div class="frontside">
+                                  <div class="card">
+                                      <div class="card-body text-center">
+                                          <p><img class=" img-fluid" src="oracle.jpg" alt="card image"></p>
+                                          <h4 class="card-title">ORACLE</h4>
+                                          <p class="card-text"></p>
+                                          <a href="#" class="btn btn-primary btn-sm">APPLY</a>
+                                      </div>
+                                  </div>
+                              </div>
+                           
+                                  <div class="card">
+                                      <div class="card-body text-center mt-4">
+                                         
+                                          <p class="card-text">
+                                              Name:Ms. Safra Catz<br>
+                                          Phone: +91 80 6786 2950<br>
+                                            Email: salesinquiry_in@oracle.com</p>
+                                          <ul class="list-inline">
+                                              <li class="list-inline-item">
+                                                  <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                      <i class="fa fa-facebook"></i>
+                                                  </a>
+                                              </li>
+                                              <li class="list-inline-item">
+                                                  <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                      <i class="fa fa-twitter"></i>
+                                                  </a>
+                                              </li>
+                                              <li class="list-inline-item">
+                                                  <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                      <i class="fa fa-skype"></i>
+                                                  </a>
+                                              </li>
+                                              <li class="list-inline-item">
+                                                  <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                      <i class="fa fa-google"></i>
+                                                  </a>
+                                              </li>
+                                          </ul>
+                                      </div>
+                                  </div>
+                              
+                          </div>
+                      </div>
+                  </div>
+                  <!-- ./Team member -->
+                  <!-- Team member -->
+                  <div class="col-xs-12 col-sm-6 col-md-4">
+                      <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                          <div class="mainflip">
+                              <div class="frontside">
+                                  <div class="card">
+                                      <div class="card-body text-center">
+                                          <p><img class=" img-fluid" src="goldman.jpg" alt="card image"></p>
+                                          <h4 class="card-title">GOLDMAN SACHS</h4>
+                                          <a href="" class="btn btn-primary btn-sm">APPLY</a>
+                                          
+                                      </div>
+                                  </div>
+                              </div>
+                              
+                                  <div class="card">
+                                      <div class="card-body text-center mt-4">
+                                         
+                                          <p class="card-text">
+                                           Name:Mr. David Michael Solomon<br>
+                                           Phone: +91 80 4127 1600<br>
+                                            Email: gs-investor-relations@gs.com </p>
+                                          <ul class="list-inline">
+                                              <li class="list-inline-item">
+                                                  <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                      <i class="fa fa-facebook"></i>
+                                                  </a>
+                                              </li>
+                                              <li class="list-inline-item">
+                                                  <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                      <i class="fa fa-twitter"></i>
+                                                  </a>
+                                              </li>
+                                              <li class="list-inline-item">
+                                                  <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                      <i class="fa fa-skype"></i>
+                                                  </a>
+                                              </li>
+                                              <li class="list-inline-item">
+                                                  <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                      <i class="fa fa-google"></i>
+                                                  </a>
+                                              </li>
+                                          </ul>
+                                      </div>
+                                 
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- ./Team member -->
+                  
+              </div>
+          </div>
+           </section>
+       <section id="team" class="pb-5">
+       <div class="container">
+             
+              <div class="row">
+                  <!-- Team member -->
+                  <div class="col-xs-12 col-sm-6 col-md-4">
+                      <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                          <div class="mainflip">
+                              <div class="frontside">
+                                  <div class="card">
+                                      <div class="card-body text-center">
+                                          <p><img class=" img-fluid" src="tata.jpg" alt="card image"></p>
+                                          <h4 class="card-title"> (TCS)</h4>
+                                          <a href="" class="btn btn-primary btn-sm">APPLY </a>
+                                      </div>
+                                  </div>
+                              </div>
+                        
+                                  <div class="card">
+                                      <div class="card-body text-center mt-4">
+                                         
+                                          <p class="card-text">
+                                              Name: Mr.Rajesh Gopinathan<br>
+                                            Phone: 080672 46000<br>
+                                            Email: Global.marketing@tcs.com</p>
+                                          <ul class="list-inline">
+                                              <li class="list-inline-item">
+                                                  <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                      <i class="fa fa-facebook"></i>
+                                                  </a>
+                                              </li>
+                                              <li class="list-inline-item">
+                                                  <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                      <i class="fa fa-twitter"></i>
+                                                  </a>
+                                              </li>
+                                              <li class="list-inline-item">
+                                                  <a class="social-icon text-xs-center" target="_blank" href="http://www.github.com/Chiranjeevicc">
+                                                      <i class="fa fa-github"></i>
+                                                  </a>
+                                              </li>
+                                              <li class="list-inline-item">
+                                                  <a class="social-icon text-xs-center" target="_blank" href="http://www.instagram.com/mysurien_kannadiga">
+                                                      <i class="fa fa-youtube"></i>
+                                                  </a>
+                                              </li>
+                                          </ul>
+                                      </div>
+                                
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- ./Team member -->
+                  <!-- Team member -->
+                  <div class="col-xs-12 col-sm-6 col-md-4">
+                      <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                          <div class="mainflip">
+                              <div class="frontside">
+                                  <div class="card">
+                                      <div class="card-body text-center">
+                                          <p><img class=" img-fluid" src="oracle.jpg" alt="card image"></p>
+                                          <h4 class="card-title">ORACLE</h4>
+                                          <p class="card-text"></p>
+                                          <a href="#" class="btn btn-primary btn-sm">APPLY</a>
+                                      </div>
+                                  </div>
+                              </div>
+                           
+                                  <div class="card">
+                                      <div class="card-body text-center mt-4">
+                                         
+                                          <p class="card-text">
+                                              Name:Ms. Safra Catz<br>
+                                          Phone: +91 80 6786 2950<br>
+                                            Email: salesinquiry_in@oracle.com</p>
+                                          <ul class="list-inline">
+                                              <li class="list-inline-item">
+                                                  <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                      <i class="fa fa-facebook"></i>
+                                                  </a>
+                                              </li>
+                                              <li class="list-inline-item">
+                                                  <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                      <i class="fa fa-twitter"></i>
+                                                  </a>
+                                              </li>
+                                              <li class="list-inline-item">
+                                                  <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                      <i class="fa fa-skype"></i>
+                                                  </a>
+                                              </li>
+                                              <li class="list-inline-item">
+                                                  <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                      <i class="fa fa-google"></i>
+                                                  </a>
+                                              </li>
+                                          </ul>
+                                      </div>
+                                  </div>
+                              
+                          </div>
+                      </div>
+                  </div>
+                  <!-- ./Team member -->
+                  <!-- Team member -->
+                  <div class="col-xs-12 col-sm-6 col-md-4">
+                      <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                          <div class="mainflip">
+                              <div class="frontside">
+                                  <div class="card">
+                                      <div class="card-body text-center">
+                                          <p><img class=" img-fluid" src="goldman.jpg" alt="card image"></p>
+                                          <h4 class="card-title">GOLDMAN SACHS</h4>
+                                          <a href="" class="btn btn-primary btn-sm">APPLY</a>
+                                          
+                                      </div>
+                                  </div>
+                              </div>
+                              
+                                  <div class="card">
+                                      <div class="card-body text-center mt-4">
+                                         
+                                          <p class="card-text">
+                                           Name:Mr. David Michael Solomon<br>
+                                           Phone: +91 80 4127 1600<br>
+                                            Email: gs-investor-relations@gs.com </p>
+                                          <ul class="list-inline">
+                                              <li class="list-inline-item">
+                                                  <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                      <i class="fa fa-facebook"></i>
+                                                  </a>
+                                              </li>
+                                              <li class="list-inline-item">
+                                                  <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                      <i class="fa fa-twitter"></i>
+                                                  </a>
+                                              </li>
+                                              <li class="list-inline-item">
+                                                  <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                      <i class="fa fa-skype"></i>
+                                                  </a>
+                                              </li>
+                                              <li class="list-inline-item">
+                                                  <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                      <i class="fa fa-google"></i>
+                                                  </a>
+                                              </li>
+                                          </ul>
+                                      </div>
+                                 
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- ./Team member -->
+                  
+              </div>
+          </div>
+           </section>
+  
+      <section id="footer">
+		<div class="container">
+			<div class="row text-center text-xs-center text-sm-left text-md-left">
+				<div class="col-xs-12 col-sm-4 col-md-4">
+					<h5>Quick links</h5>
+					<ul class="list-unstyled quick-links">
+						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>About</a></li>
+						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Help</a></li>
+						<li><a href="#About Campus Recruitment"><i class="fa fa-angle-double-right"></i>History of BMSCE</a></li>
+						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>more</a></li>
+            <li><a href="SUPPORT TEAM"><i class="fa fa-angle-double-right"></i>Videos</a></li>
+            <li><a href="#top"><i class="fa fa-angle-double-right"></i>Home</a></li><br>
+					</ul>
+        </div>
+     
+				
+			
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+					<p><u><a href="https://www.nationaltransaction.com/">National Transaction Corporation</a></u>BMS Collage Of Engineering,Benglore-19</p>
+					<p class="336h6">&copy All right Reversed.<a class="text-green ml-2" href="https://www.BMSCE.com" target="_blank">Simple dam's</a></p>
+				</div>
+				</hr>
+      </div>
+      
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
+        <ul class="list-unstyled list-inline social text-center">
+             <li class="list-inline-item"><a href="https://www.facebook.com/BMS-College-of-Engineering-52818113981/"><i class="fa fa-facebook"></i></a></li>
+          <li class="list-inline-item"><a href="https://twitter.com/hashtag/bmsce?lang=en"><i class="fa fa-twitter"></i></a></li>
+          <li class="list-inline-item"><a href="https://www.instagram.com/explore/tags/bmsce/?hl=en"><i class="fa fa-instagram"></i></a></li>
+          <li class="list-inline-item"><a href="https://mail.google.com/mail/u/1/#inbox"><i class="fa fa-google-plus"></i></a></li>
+         <!-- <li class="list-inline-item"><a href="javascript:void();" target="_blank"><i class="fa fa-envelope"></i></a></li>-->
+          </ul>
+      </div>
+      </hr>
+    </div>	
+    
+	</section>
+        <script>
+      $(document).ready(function() {
+        // executes when HTML-Document is loaded and DOM is ready
+        console.log("document is ready");
+
+        $('[data-toggle="offcanvas"], #navToggle').on("click", function() {
+          $(".offcanvas-collapse").toggleClass("open");
+        });
+
+        // document ready
+      });
+
+      window.onload = function() {
+        // executes when complete page is fully loaded, including all frames, objects and images
+        console.log("window is loaded");
+
+        // window load
+      };
+    </script>
+
+
+  </body>
+</html>
